@@ -1,0 +1,128 @@
+.navbarNew{
+    height: 350px;
+    background: url(../images/bg-body.gif);
+    position: absolute !important;
+}
+.navbar-brand img{
+    margin: 27px;
+    width: 332px;
+    margin-top: 10px;
+}
+.nav li a{
+    padding: 15px 3px;
+    color: #524a4d !important;
+    font-weight: bold;
+}
+.navbar-nav {
+    margin-right: 128px;
+}
+.searchbar{
+    width: 27%;
+    margin-right: 125px;
+    margin-top: 38px;
+    margin-bottom: 16px;
+}
+.header_links li a{
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -205px;
+    color: #5b5c5e;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #e8edf1;
+    text-transform: capitalize;
+}
+.header_links li{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    width: 160px;
+}
+.header_links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 56px; 
+}
+#section{
+    background: #aa6581;
+    height: 364px;
+    padding: 10px;
+    width: 960px;
+    margin-top: 188px;
+    margin-left: 56px;
+}
+.section{
+    background: #aa6581;
+    height: 209px;
+    padding: 10px;
+    width: 960px;
+    margin-top: 188px;
+    margin-left: 56px;
+}
+#section ul{
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#section ul li{
+    background: none;
+    float: none;
+    height: 38px;
+    line-height: 34px;
+    padding: 1px 0 1px;
+    width: 230px;
+}
+#section ul li a{
+    background: url(../images/sprite-buttons.gif) no-repeat 0 -157px;
+    color: #f5ffff;
+    display: block;
+    height: 38px;
+    line-height: 34px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 0 1px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #ad657d, -1px -1px 0 #ad657d, -1px 1px 0 #ad657d, 1px -1px 0 #ad657d;
+    text-transform: lowercase;
+}
+#section a img{
+    width: 75%;
+    height: 99%;
+}
+.navbar-header{
+    margin-left: 47 !important;
+}
+#content{
+    background: #f5f5f5;
+    height: auto;
+    width: 95%;
+    margin-top: 552px;
+}
+.inner_content{
+    margin-top: 420px !important;
+}
+#content div div#visitshop{
+    right: 0px !important;
+}
+#about .section, #services .section{
+    background: none !important;
+}
+#content div form textarea {
+    width: 100% !important;
+}
+.post_div {
+    margin: 0px !important;
+    padding: 10px 105px 30px !important;
+    width: 100% !important;
+}
+.adjust_dropdown{
+    min-width: 118px !important;
+    padding: 0px 0 !important;
+    margin: 0px 0 0 !important;
+}
+.para_in_post_adjust p{
+    max-height: 108px;
+    overflow: hidden;
+}

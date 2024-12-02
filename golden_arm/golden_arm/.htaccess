@@ -1,0 +1,52 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+
+    # Force HTTPS and remove "www" if not on localhost
+    RewriteCond %{HTTP_HOST} !=localhost
+    RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L,NE]
+
+    # Ensure static files (CSS, JS, images, etc.) are not rewritten
+    RewriteCond %{REQUEST_URI} !^/admin/.*\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf)$ [NC]
+
+    # Specific routes in the admin area
+    RewriteRule ^admin/dishes$ admin/posts.php [L]
+    RewriteRule ^admin/categories$ admin/categories.php [L]
+
+    # Generic route for the admin area (all other /admin/ requests)
+    RewriteRule ^admin/?$ admin/index.php [L]
+
+    # Block files and folders starting with a dot, except ".well-known"
+    RewriteRule (^|/)\.(?!well-known\/) index.php [L]
+
+    # Other specific page routes
+    RewriteRule ^home$ index.php [L]
+    RewriteRule ^menu$ menu.php [L]
+    RewriteRule ^pickup$ menu.php [L]
+    RewriteRule ^reservation$ reservation.php [L]
+    RewriteRule ^login$ signin.php [L]
+
+    # Add a specific route for golden_arm
+    RewriteRule ^golden_arm$ golden_arm.php [L]
+
+    # Handle all other requests by sending them to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+
+# Pass the Authorization header to PHP
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+# Enable compression for text file responses
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
